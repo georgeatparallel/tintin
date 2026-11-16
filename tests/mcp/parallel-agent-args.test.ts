@@ -5,7 +5,7 @@ import { getParallelSearchMcpUrl, getParallelTaskMcpUrl } from "../../src/runtim
 import type { McpServerInfo } from "../../src/runtime/mcp/types.js";
 
 test("parallel MCP URLs use the current endpoints", () => {
-  assert.equal(getParallelSearchMcpUrl(), "https://search.parallel.ai/mcp");
+  assert.equal(getParallelSearchMcpUrl(), "https://mcp.parallel.ai/mcp");
   assert.equal(getParallelTaskMcpUrl(), "https://task-mcp.parallel.ai/mcp");
 });
 
@@ -16,7 +16,7 @@ test("codex MCP args include bearer_token_env_var for parallel servers", () => {
       {
         id: "parallel_search",
         transport: "http",
-        url: "https://search.parallel.ai/mcp",
+        url: "https://mcp.parallel.ai/mcp",
         headers: { Authorization: "Bearer test" },
         bearerTokenEnvVar: "TINTIN_MCP_BEARER_PARALLEL_SEARCH",
         bearerToken: "test",
